@@ -2,10 +2,20 @@
   "name": "broomstick",
   "version": "1.0.0",
   "description": "API for witchOfWCAG",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
+    "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
+    "build": "tsc",
+    "prestart": "npm run build",
+    "start": "node .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Paige Zaleppa",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.2",
+    "@types/node": "^12.12.11",
+    "tslint": "^5.20.1",
+    "typescript": "^3.7.2"
+  }
 }
